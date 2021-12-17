@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ThongKeTheoNgay";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ThongKeTheoNgay</h2>
+<link href="~/Content/StyleAdmin.css" rel="stylesheet" />
+<script>var tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 7000);
+    $("#theTomorrow").val(getFormattedDate(tomorrow));
+    // Get date formatted as YYYY-MM-DD
+    function getFormattedDate(date) {
+        return date.getFullYear()
+            + "-"
+            + ("0" + (date.getMonth() + 1)).slice(-2)
+            + "-"
+            + ("0" + date.getDate()).slice(-2);
+    }</script>
+<input type="date" id="theTomorrow" />

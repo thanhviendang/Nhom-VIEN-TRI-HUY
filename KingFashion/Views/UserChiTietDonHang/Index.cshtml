@@ -1,0 +1,43 @@
+﻿@model IEnumerable<KingFashion.Models.CHITIETDATHANG>
+<table class="table">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SANPHAM.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+
+                @Html.FormatValue(item.ThanhTien, "{0:#,##0}")$
+            </td>
+
+        </tr>
+
+    }
+    <tr>
+        <td></td>
+        <td style="text-align:center; color:red ; font-weight:bold; padding-right:5px; padding: 10px 0px;">
+            Tổng số lượng:@Model.Count()
+        </td>
+        <td style="text-align:center; color:red ; font-weight:bold;">
+            Tổng tiền : @string.Format("{0:#,##0}", Model.Sum(s => s.ThanhTien))$
+        </td>
+    </tr>
+
+
+</table>
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("DetailsUser","User",new { id = item.DONDATHANG.MaKH })">Quay lại</a>
+    break;
+}

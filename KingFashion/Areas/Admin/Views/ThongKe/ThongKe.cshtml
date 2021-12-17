@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/StyleAdmin.css" rel="stylesheet" />
+<h2>Thống kê</h2>
+
+<table class="tableTK">
+    <tr>
+        <td colspan="5">
+            <hr style="width: 150px; float:left; border: 1px solid black; margin-left: 5%; height:2px" />
+            Bảng thống kê theo tất cả đơn hàng
+            <hr style="width: 150px; float:right; border: 1px solid black; margin-right: 5%; height: 2px" />
+        </td>
+    </tr>
+    <tr>
+        <th>Tổng đơn đả bán</th>
+        <th>Tổng sản phẩm bán được</th>
+        <th>Tổng tiền thu về</th>
+        <th>Tổng vốn đầu tư</th>
+        <th>Tổng lợi nhuận</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.tongdon</td>
+        <td> @ViewBag.TongSpBanDc</td>
+        <td> @Html.FormatValue(@ViewBag.TongTien, "{0:#}")$</td>
+        <td> @Html.FormatValue(@ViewBag.TienVon, "{0:#}")$</td>
+        <td>@Html.FormatValue(@ViewBag.LoiNhuan, "{0:#}")$</td>
+    </tr>
+</table>
+<br />
+<table class="tableTK">
+    <tr>
+        <td colspan="5">
+            <hr style="width: 150px; float:left; border: 1px solid black; margin-left: 5%; height:2px" />
+            Bảng thống kê theo tất cả đơn hàng <span style="color: red">đã hoàn thành</span>
+            <hr style="width: 150px; float:right; border: 1px solid black; margin-right: 5%; height: 2px" />
+        </td>
+    </tr>
+    <tr>
+        <th>Tổng đơn đả bán</th>
+        <th>Tổng sản phẩm bán được</th>
+        <th>Tổng tiền thu về</th>
+        <th>Tổng vốn đầu tư</th>
+        <th>Tổng lợi nhuận</th>
+    </tr>
+    <tr>
+        <td><a href="@Url.Action("DonHangDone","DonDatHang")" target="hello"> @ViewBag.TongDonDone</a></td>
+        <td><a href="@Url.Action("Spdaban","ChiTietDonHang")" target="hello"> @ViewBag.TongSpDone</a></td>
+        <td> @Html.FormatValue(@ViewBag.TongThuDone, "{0:#}")$</td>
+        <td> @Html.FormatValue(@ViewBag.TongVonDone, "{0:#}")$</td>
+        <td>@Html.FormatValue(@ViewBag.LoiNhuanDone, "{0:#}")$</td>
+    </tr>
+</table>
+
+
+<br />
+@Html.Action("ThongKeTheoNgayPartial", "ThongKe")
+<br />
+<br />
+<iframe name="hello" width="100%" height="500" scrolling="auto"></iframe>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<KingFashion.Models.DONDATHANG>
+
+<table class="table">
+    <tr>
+        
+        <th>Tình trạng: </th>
+        <th>Ngày đặt: </th>
+        <th>Ngày giao: </th>
+        <th>Tên khách hàng:</th>
+        <th>Tên người nhận:</th>
+        <th>Số điện thoại người nhận:</th>
+        <th>Địa điểm: </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+   <tr>
+    <td>@Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)</td>
+    <td>@Html.DisplayFor(modelItem => item.NgayDat)</td>
+    <td>@Html.FormatValue(item.NgayGiao, "{0:dd/MM/yyyy}")</td>
+    <td>@Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)</td>
+    <td>@Html.DisplayFor(modelItem => item.HoTenNguoiNhan)</td>
+    <td>@Html.DisplayFor(modelItem => item.Sodienthoai)</td>
+    <td>@Html.DisplayFor(modelItem => item.NoiNhan)</td>
+    <td>@Html.ActionLink("Details", "Details", new { id = item.MaDonHang })</td>
+   </tr>
+}
+
+</table>

@@ -1,0 +1,101 @@
+﻿@model KingFashion.Models.DONDATHANG
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    input{
+        border: none;
+    }
+</style>
+<h2>Chỉnh sửa thông tin đơn hàng:</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2">Mã đơn hàng:</label>
+        <div class="col-md-10">
+            <input type="text" size="70" name="iMaDonHang" value="@Model.MaDonHang" readonly />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Tình trạng: </label>
+        <div class="col-md-10">
+            <select name="sTinhTrang" id="tinhtrangs">
+                <option style="background-color: dodgerblue" value="Xác nhận">Xác nhận</option>
+                <option style="background-color: yellow" value="Giao hàng">Giao hàng</option>
+                <option style="background-color: red" value="Từ chối">Từ chối</option>
+                <option style="background-color: orange" value="Trả hàng">Trả hàng</option>
+                <option style="background-color: lawngreen" value="Hoàn thành">Hoàn thành</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Ngày đặt:</label>
+        <div class="col-md-10">
+            <input type="datetime" name="dNgayDat" readonly
+                   value="@Convert.ToDateTime(Model.NgayDat)" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Ngày giao:</label>
+        <div class="col-md-10">
+            <input type="datetime" name="dNgayGiao" readonly
+                   value="@Convert.ToDateTime(Model.NgayGiao)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mã khách hàng:</label>
+        <div class="col-md-10">
+            <input type="text" name="MaKH" readonly
+                   value="@Model.MaKH" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nơi nhận:</label>
+        <div class="col-md-10">
+            <input type="text" name="sNoiNhan" readonly
+                   value="@Model.NoiNhan" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Người nhận:</label>
+        <div class="col-md-10">
+            <input type="text" name="sNguoiNhan" readonly
+                   value="@Model.HoTenNguoiNhan" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Điện thoại:</label>
+        <div class="col-md-10">
+            <input type="text" name="sSoDienThoai" readonly
+                   value="@Model.Sodienthoai" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

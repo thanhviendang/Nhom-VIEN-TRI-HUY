@@ -1,0 +1,65 @@
+﻿body {
+    padding-top: 0px;
+}
+
+h1 {
+    color: #F90
+}
+
+p {
+    color: #0C0
+}
+.imghot{
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+
+}
+.tensphot a {
+    font-size: 40px;
+    font-family: 'Courier New';
+    font-weight: bold;
+    text-decoration: none;
+}
+.tensphot a:hover{
+    text-decoration: none;
+    color: black;
+}
+.mtsph {
+    color: black;
+    font-family: 'Courier New';
+}
+.xemngaysph {
+    font-size: 25px;
+    font-family: 'Courier New';
+    padding: 5px 10px;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+
+}
+    .xemngaysph:hover {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        
+    }
+h2 {
+    font-family: 'Courier New';
+}
+.tdgt {
+    margin-top: -300px;
+    font-family: 'Courier New';
+    color: black;
+    background-color: rgba(255, 255, 255, 0.548);
+    padding: 30px 10px;
+}
+.tgt {
+    padding: 20px 15px;
+    font-family: 'Courier New';
+    color: black;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.548);
+}

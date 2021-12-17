@@ -1,0 +1,56 @@
+﻿@model IEnumerable<KingFashion.Models.SANPHAM>
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="carousel1" class="carousel slide">
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="img-responsive" src="~/Images/Slider/slide1.jpg" alt="thumb" height="1000">
+                        <div class="carousel-caption"> ĐẲNG CẤP </div>
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="~/Images/Slider/slide2.jpg" alt="thumb">
+                        <div class="carousel-caption"> ĐAM MÊ </div>
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="~/Images/Slider/slider3.png" alt="thumb">
+                        <div class="carousel-caption"> PHONG CÁCH </div>
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="~/Images/Slider/slide4.jpg" alt="thumb">
+                        <div class="carousel-caption"> ĐẲNG CẤP </div>
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="~/Images/Slider/slider5.jpg" alt="thumb">
+                        <div class="carousel-caption"> ĐAM MÊ </div>
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="~/Images/Slider/slider6.jpg" alt="thumb">
+                        <div class="carousel-caption">PHONG CÁCH</div>
+                    </div>
+                    @* @foreach (var sph in Model)
+                        {
+
+                            <div class="item">
+                                <a href="@Url.Action("ChiTietSanPham", "KingFashion", new { id = sph.MaSP })">
+                                    <img height="500" style="float: left" class="class=" img-responsive"" src="~/Images/@sph.AnhBia" alt="placeholder image">
+                                </a>
+                                <div class="carousel-caption"><a href="@Url.Action("ChiTietSanPham", "KingFashion", new { id = sph.MaSP })">@sph.TenSP</a></div>
+                            </div>
+                        }*@
+                </div>
+                <a class="left carousel-control" href="#carousel1" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel1" data-slide="next"><span class="icon-next"></span></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+
+
+

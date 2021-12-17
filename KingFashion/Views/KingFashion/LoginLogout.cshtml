@@ -1,0 +1,24 @@
+﻿@using KingFashion.Models
+@{
+    KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+}
+@*//Tùy chọn để hiển thị*@
+@if (Session["TaiKhoan"] == null) //Giao diện Login
+{
+    <li>
+        <a href="~/User/DangKy">
+            <span class="glyphicon glyphicon-user"></span>
+            Đăng ký
+        </a>
+    </li>
+    <li><a href="~/User/DangNhap?id=1"><span class="glyphicon glyphicon-log-in"></span>Đăng nhập</a></li>
+}
+else
+{
+    <li>
+        <a href="@Url.Action("DetailsUser","User",new { id = kh.MaKH })">
+            <span title="Thông tin của bạn" class="glyphicon glyphicon-user"></span>@kh.HoTen
+        </a>
+    </li>
+    <li><a href="@Url.Action("DangXuat","User")"><img src="~/Images/logout.png" alt="Đăng xuất" title="Đăng xuất" height="20" /></a></li>
+}

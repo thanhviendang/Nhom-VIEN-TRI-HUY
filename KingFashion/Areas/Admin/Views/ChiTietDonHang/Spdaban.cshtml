@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Spdaban";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdminDone.cshtml";
+}
+
+@model IEnumerable<KingFashion.Models.CHITIETDATHANG>
+<h2>Sản phẩm đả bán được</h2>
+<table class="table">
+    <tr>
+        <th>Mã đơn hàng</th>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+        <th>Giá gốc</th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SANPHAM.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+
+                @Html.FormatValue(item.ThanhTien, "{0:#,##0}")$
+            </td>
+            <td>
+                @Html.FormatValue(item.SANPHAM.Giagoc * item.SoLuong, "{0:#,##0}")$
+            </td>
+
+
+        </tr>
+
+    }
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center; color:red ; font-weight:bold; padding-right:5px; padding: 10px 0px;">
+        Tổng số lượng: @ViewBag.TongSl
+    </td>
+    <td style="text-align:center; color:red ; font-weight:bold;">
+        Tổng tiền : @string.Format("{0:#,##0}", Model.Sum(s => s.ThanhTien))$
+    </td>
+    <td style="text-align:center; color:red ; font-weight:bold;">
+        Tổng vốn : @string.Format("{0:#,##0}", ViewBag.SumVon)$
+    </td>
+</tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="3" style="text-align:center; color:red ; font-weight:bold;">
+            Tổng lợi nhuận : @string.Format("{0:#,##0}", ViewBag.LoiNhuan)$
+        </td>
+
+    </tr>
+
+</table>
+
+

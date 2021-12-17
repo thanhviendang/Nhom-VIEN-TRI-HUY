@@ -1,0 +1,10 @@
+﻿@model IEnumerable<KingFashion.Models.CHUDE>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("SanPhamTheoChuDe","KingFashion", new { id = item.MaCd})" class="list-group-item">@item.TenChuDe</a>
+}
+
+
+

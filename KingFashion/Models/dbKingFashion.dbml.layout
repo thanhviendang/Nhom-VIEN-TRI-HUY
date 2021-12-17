@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="dbKingFashion">
+  <DataContextMoniker Name="/dbKingFashionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5e133493-f04a-4c74-81da-7335805f8742" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbKingFashionDataContext/CHUDE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cbf9644-fc60-4df3-bc41-c7fa546030e0" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78ab0f69-1a53-49ef-adf5-86d7a9475418" absoluteBounds="6.25, 1.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbKingFashionDataContext/CHITIETDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b1a13b4-6a5f-4302-820f-d0b354ea1628" absoluteBounds="6.265, 1.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d058578b-4fa0-4b66-8277-39b57ad798d3" absoluteBounds="3.5, 8.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbKingFashionDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f6ec3f7-566b-4105-800c-6637d9182c5b" absoluteBounds="3.515, 8.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03eccdd7-6072-40b2-895b-52d6541eff34" absoluteBounds="0.75, 8.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbKingFashionDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9319dae2-9201-42d3-bbfd-74848bd5f017" absoluteBounds="0.765, 8.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba51fd2e-74f5-4347-b518-a3ba9ce2a796" absoluteBounds="0.75, 5.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbKingFashionDataContext/NHASANXUAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68a7484a-9a27-4395-9cb1-ea0d0a56ca12" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30fa63be-fac9-4a05-a332-f0df38d66ad4" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbKingFashionDataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9fb0e24-c013-433d-b422-bd45610245ad" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 9.29890055338542); (7.78125 : 9.29890055338542); (7.78125 : 3.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbKingFashionDataContext/DONDATHANG/DONDATHANG_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="d058578b-4fa0-4b66-8277-39b57ad798d3" />
+        <classShapeMoniker Id="78ab0f69-1a53-49ef-adf5-86d7a9475418" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.29890055338542); (3.5 : 9.29890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbKingFashionDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="03eccdd7-6072-40b2-895b-52d6541eff34" />
+        <classShapeMoniker Id="d058578b-4fa0-4b66-8277-39b57ad798d3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.28929768880208); (6.25 : 2.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbKingFashionDataContext/SANPHAM/SANPHAM_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="30fa63be-fac9-4a05-a332-f0df38d66ad4" />
+        <classShapeMoniker Id="78ab0f69-1a53-49ef-adf5-86d7a9475418" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbKingFashionDataContext/CHUDE/CHUDE_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="5e133493-f04a-4c74-81da-7335805f8742" />
+        <classShapeMoniker Id="30fa63be-fac9-4a05-a332-f0df38d66ad4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.50121330413662); (3.125 : 5.12621330413662); (3.125 : 3.07095211393229); (3.5 : 3.07095211393229)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbKingFashionDataContext/NHASANXUAT/NHASANXUAT_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="ba51fd2e-74f5-4347-b518-a3ba9ce2a796" />
+        <classShapeMoniker Id="30fa63be-fac9-4a05-a332-f0df38d66ad4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="61047ce7-6f16-44f4-ba67-4246b1ecb67b" absoluteBounds="4.625, 4.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbKingFashionDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="616ddb84-ad5e-4b7a-8148-1e502d5288db" absoluteBounds="4.64, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

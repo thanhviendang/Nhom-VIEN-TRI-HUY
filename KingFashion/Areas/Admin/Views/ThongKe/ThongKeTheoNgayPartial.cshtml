@@ -1,0 +1,38 @@
+﻿<link href="~/Content/StyleAdmin.css" rel="stylesheet" />
+@using (Html.BeginForm("ThongKe", "ThongKe", FormMethod.Get))
+{
+    <table style="margin: 0 auto; text-align: center; font-size: 20px">
+        <tr>
+            <td>Chọn ngày kiểm tra từ ngày </td>
+            <td><input id="firstDay" type="date" name="ngayDau" value="@ViewBag.NgayDau" /></td>
+            <td> đến ngày </td>
+            <td><input id="lastDay" type="date" name="ngayCuoi" value="@ViewBag.NgayCuoi" /></td>
+            <td> <input type="submit" value="Xác nhận" /></td>
+        </tr>
+    </table>
+}
+<br />
+<br />
+<table class="tableTK">
+    <tr>
+        <td colspan="5">
+            <hr style="width: 150px; float:left; border: 1px solid black; margin-left: 5%; height:2px" /> 
+            <span style="color: red">Bảng thống kê doanh thu từ ngày @ViewBag.NgayDau đến ngày @ViewBag.NgayCuoi </span>
+            <hr style="width: 150px; float:right; border: 1px solid black; margin-right: 5%; height: 2px" />
+        </td>
+    </tr>
+    <tr>
+        <th>Tổng đơn đả bán</th>
+        <th>Tổng sản phẩm bán được</th>
+        <th>Tổng tiền thu về</th>
+        <th>Tổng vốn đầu tư</th>
+        <th>Tổng lợi nhuận</th>
+    </tr>
+    <tr>
+        <td><a href="@Url.Action("DonHangDtoD","DonDatHang")" target="hello"> @ViewBag.DhDtoD </a></td>
+        <td><a href="@Url.Action("SpdabanDtoD","ThongKe")" target="hello"> @ViewBag.SpDtoD </a></td>
+        <td> @Html.FormatValue(@ViewBag.TongThuDtoD, "{0:#0}")$</td>
+        <td> @Html.FormatValue(@ViewBag.TongVonDtoD, "{0:#0}")$</td>
+        <td>@Html.FormatValue(@ViewBag.LoiNhuanDtoD, "{0:#0}")$</td>
+    </tr>
+</table>

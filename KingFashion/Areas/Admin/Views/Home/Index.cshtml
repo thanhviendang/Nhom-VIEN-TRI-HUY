@@ -1,0 +1,70 @@
+﻿@{
+Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+ViewBag.Title = "Admin";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/StyleAdmin.css" rel="stylesheet" />
+</head>
+<body class="BodyHome">
+    <div>
+        <h2 style=" text-align: center;">
+            CHÀO MỪNG ĐẾN VỚI TRANG QUẢN TRỊ KING FASHION
+        </h2>
+        <ul class="mucql">
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý sản phẩm</span><br /><br /><br /><a href="@Url.Action("Index","SanPham")">SẢN PHẨM</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/sanpham.jpg" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý chủ đề</span><br /><br /><br /><a href="@Url.Action("Index","Chude")">CHỦ ĐỀ</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/chude.jpg" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý hãng thời trang</span><br /><br /><br /><a href="@Url.Action("Index","NSX")">HÃNG THỜI TRANG</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/hangthoitrang.jpg" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý khách hàng</span><br /><br /><br /><a href="@Url.Action("Index","KhachHang")">KHÁCH HÀNG</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/khachhang.png" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý đơn hàng</span><br /><br /><br /><a href="@Url.Action("Index","DonDatHang")">ĐƠN HÀNG</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/donhang.png" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý doanh thu</span><br /><br /><br /><a href="@Url.Action("ThongKe","ThongKe")">THỐNG KÊ</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/thongke.png" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="chonmucql"><span class="ptext"><br />Quản lý tài khoản nhân viên</span><br /><br /><br /><a href="@Url.Action("Index","QuanlyTaiKhoanAdmin")">NHÂN VIÊN</a></span>
+                    <img class="truongql" src="~/Images/imageadmin/nhanvien.jpg" />
+                </div>
+            </li>
+            <li>
+                <div><img class="truongql" src="~/Images/imageadmin/KF.gif" /></div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = @Model.TenSP;
+    Layout = "~/Views/Shared/_LayoutCtsp.cshtml";
+}
+<style>
+    .d {
+        font-size: 20px
+    }
+
+    .tensach {
+        font-family: 'Courier New';
+        font-weight: bold;
+    }
+
+    .ima {
+        float: left;
+        width: 50%;
+        clear: both;
+        margin-right: 10px;
+        height: 100%;
+    }
+
+    .motasach {
+        font-family: 'Courier New';
+        height: auto;
+    }
+
+    .thumbnail {
+        border: none;
+    }
+
+    .giaban {
+        color: red;
+    }
+</style>
+
+<div class="thumbnail">
+    <h2 class="tensach text-center">
+        @Model.TenSP
+    </h2>
+
+    <div class="motasach">
+        <img class="ima" src="~/Images/@Model.AnhBia" alt=" @Model.TenSP" />
+        <p>
+            @Html.Raw(@Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))
+        </p>
+        <p class="ngaycapnhat text-center">Ngày Cập Nhật: @Html.FormatValue(@Model.NgayCapNhat, "{0:dd/MM/yyyy}")</p>
+        <p class="giaban text-center"><span class="d">Price: @Html.FormatValue(@Model.GiaBan, "{0:#,##0}") $</span></p>
+        <p class="addtocard text-center">
+            <a href="@Url.Action("ThemGioHang","GioHang",new {ms = Model.MaSP, url = Request.Url.ToString()})" class="btn btn-primary" role="button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add To Cart
+            </a>
+        </p>
+
+    </div>
+</div>
+<br />
+<br />
+<br />

@@ -1,0 +1,50 @@
+﻿@using KingFashion.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 class="text-center">SẢN PHẨM</h2>
+<hr>
+<div class="row text-center" style="width:100%;">
+    @foreach (var sp in Model)
+    {
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+            <div style="margin-left: 20px" class="thumbnail" id="tet">
+                <a href="@Url.Action("ChiTietSanPham","KingFashion", new { id = sp.MaSP})">
+                    <img src="~/Images/@sp.AnhBia" alt="Thumbnail Image 1" class="imgresponsive img-rounded imgbook" style="width:400px;"></a>
+                    <div class="caption">
+
+                        <h4 style="min-height:70px;">
+                            <a href="@Url.Action("ChiTietSanPham","KingFashion", new { id = sp.MaSP})"><span class="namesp">@sp.TenSP</span> </a>
+                            <br /><br />
+                            <a href="@Url.Action("ChiTietSanPham","KingFashion", new { gia = sp.GiaBan})"><span class="pricesp">@Html.FormatValue(sp.GiaBan, "{0:#,##0}") $</span> </a>
+                        </h4>
+                        <p>
+                            <a href="@Url.Action("ThemGioHang","GioHang", new { ms = sp.MaSP, url = Request.Url.ToString() })" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-shopping-cart" ariahidden="true"></span> Add to Cart
+                            </a>
+                        </p>
+                    </div>
+</div>
+        </div>
+    }
+</div>
+
+<div class="MenuTrang">
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new
+    {
+        iMaCD = ViewBag.MaCD,
+        page = page
+    }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+

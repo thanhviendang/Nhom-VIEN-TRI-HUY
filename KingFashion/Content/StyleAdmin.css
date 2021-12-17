@@ -1,0 +1,87 @@
+﻿.BodyHome {
+    font-family: 'High Tower Text';
+}
+.mucql{
+    margin: 0 auto;
+    width: 100%;
+    background-color: aquamarine;
+}
+.mucql li {
+    float: left;
+    list-style: none;
+}
+.mucql li div{
+    width: 350px;
+    height: 350px;
+    margin: 7px;
+}
+.mucql li div a{
+    text-decoration: none;
+}
+.truongql{
+    width: 350px;
+    height: 350px;
+    
+}
+ .chonmucql:hover {
+    background-color: rgba(255, 255, 255, 0.863);
+}
+.chonmucql {
+    /*padding: 10px 15px;*/
+    position: absolute;
+    font-size: 20px;
+    transition: background-color 0.5s;
+    color: black;
+    width: 350px;
+    height: 200px;
+    text-align: center;
+    border-radius:0px 0px 100px 100px;
+}
+.ptext {
+    transition: opacity 1.5s;
+    opacity: 0;
+}
+.chonmucql:hover .ptext{
+    opacity: 1;
+}
+.chonmucql a {
+    padding: 10px 15px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.863);
+    border: 2px solid black;
+}
+.chonmucql a:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0px 5px 5px 0px #888888;
+}
+
+/*Thống kê*/
+.ulThongKe{
+    list-style: none;
+    
+}
+.ulThongKe li{
+    line-height: 2;
+    font-size: 25px;
+    color: red;
+
+}
+.tableTK{
+    font-size: 23px;
+    width: 100%;
+}
+.tableTK tr th {
+    text-align: center;
+    border: 1px solid black;
+}
+.tableTK tr td{
+    text-align: center;
+    border: 1px solid black;
+}
+.tkDay{
+    font-size: 22px;
+    list-style: none;
+}

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<KingFashion.Models.CHITIETDATHANG>
+
+<table class="table">
+    <tr>
+        <th>Mã đơn hàng</th>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SANPHAM.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ThanhTien)*@
+                @Html.FormatValue(item.ThanhTien, "{0:#,##0}")$
+            </td>
+
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+        </tr>
+
+    }
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center; color:red ; font-weight:bold; padding-right:5px; padding: 10px 0px;">
+        Tổng số lượng:@Model.Count()
+    </td>
+    <td style="text-align:center; color:red ; font-weight:bold;">
+        Tổng tiền : @string.Format("{0:#,##0}", Model.Sum(s => s.ThanhTien))$
+    </td>
+</tr>
+
+    @*<tr>
+            <td colspan="4" style="text-align:center; color:red ; font-weight:bold; padding-right:5px; padding: 10px 0px;">
+                Tổng số lượng:@string.Format("{0:#,##0}", ViewBag.TongSoLuong)
+            </td>
+            <td colspan="5" style="text-align:center; color:red ; font-weight:bold;">
+                Tổng tiền : @string.Format("{0:#,##0,0}", ViewBag.TongTien) $
+            </td>
+        </tr>*@
+</table>

@@ -1,0 +1,54 @@
+﻿@model KingFashion.Models.NHASANXUAT
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>NHASANXUAT</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaNsx)
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mã nhà sản xuất</label>
+        <div class="col-md-10">
+            <input type="text" size="70" name="iMaNsx" value="@Model.MaNsx" readonly />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Tên nhà sản xuất</label>
+        <div class="col-md-10">
+            <input type="text" size="70" name="sTenNSX" value="@Model.TenNSX" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Địa chỉ:</label>
+        <div class="col-md-10">
+            <input type="text" size="70" name="sDiaChi" value="@Model.DiaChi" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Điện thoại</label>
+        <div class="col-md-10">
+            <input type="number" size="70" name="sDienThoai" value="@Model.DienThoai" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

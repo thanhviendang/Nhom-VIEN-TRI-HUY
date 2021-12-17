@@ -1,0 +1,82 @@
+﻿@model KingFashion.Models.DONDATHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết đơn hàng của @Html.DisplayFor(model => model.KHACHHANG.HoTen)</h2>
+<h3>Ngày @Html.DisplayFor(model => model.NgayDat)</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tình trạng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrangGiaoHang)
+        </dd>
+
+        <dt>
+            Ngày đặt:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDat)
+        </dd>
+
+        <dt>
+            Ngày giao:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGiao)
+        </dd>
+
+        <dt>
+            Mã khách hàng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKH)
+        </dd>
+        <dt>
+            Tên khách hàng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHACHHANG.HoTen)
+        </dd>
+        <dt>
+            Nơi nhận
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiNhan)
+        </dd>
+
+        <dt>
+            Người nhận:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTenNguoiNhan)
+        </dd>
+
+        <dt>
+            Điện thoại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sodienthoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDonHang }) |
+    @Html.ActionLink("Back", "Index")
+</p>
+<div>@Html.Action("Index", "ChiTietDonHang")</div>

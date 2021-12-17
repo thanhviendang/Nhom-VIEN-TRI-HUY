@@ -1,0 +1,63 @@
+﻿@model IEnumerable<KingFashion.Models.ADMIN>
+
+@{
+    ViewBag.Title = "Quản lý các tài khoản nhân viên";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý các tài khoản nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Họ tên</th>
+        <th>Địa chỉ</th>
+        <th>Điện thoại</th>
+        <th>Ngày sinh</th>
+        <th>Email</th>
+        <th>Tên đăng nhập</th>
+        <th>Mật khẩu</th>
+        <th>Quyền</th>
+        <th>Chức vụ</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.HoTen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenDN)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MatKhau)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quyen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChucVu)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaAd }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaAd })
+    </td>
+</tr>
+}
+
+</table>

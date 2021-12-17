@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/png" href="~/Images/ads.png" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .imgbook {
+            transition: all 0.5s ease-in;
+            width: 400px;
+        }
+
+        .imgsachbannhieu {
+            width: 100px;
+        }
+
+        .imgbook:hover {
+            transform: scale(1.0);
+            cursor: pointer;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: red;
+                text-decoration: none;
+            }
+
+        #tet {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+            #tet:hover {
+                box-shadow: 0px 0px 5px 0px black;
+            }
+    </style>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    @Html.Action("NavPartial", "KingFashion")
+
+
+    <div class="container">
+       
+                @RenderBody()
+            
+    </div>
+   
+    <footer class="container well" align="center">
+        <p>©2021 - KingFashion</p>
+        <p>Website được phát triển từ AEXM để phục vụ tốt nhất cho khách hàng</p>
+        <p>Email: aexmking@gmail.com</p>
+        <ul>
+            <ol>Được tài trợ bởi các hảng thời trang hàng đầu thế giới</ol>
+            <li>
+                Louis Vuitton <br />
+                Hermès <br />
+                Prada <br />
+                Chanel <br />
+                Gucci <br />
+                Versace <br />
+                Christian Dior <br />
+                Burberry <br />
+            </li>
+        </ul>
+
+    </footer>
+</body>
+</html>

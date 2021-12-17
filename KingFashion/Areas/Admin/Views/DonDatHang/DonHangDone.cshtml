@@ -1,0 +1,83 @@
+﻿@model IEnumerable<KingFashion.Models.DONDATHANG>
+@*@{
+    ViewBag.Title = "DonHangDone";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdminDone.cshtml";
+}*@
+<h2>Đơn hàng hoàn thành</h2>
+<h4>Tổng số lượng đơn hàng : @Model.Count()</h4>
+<style>
+    table {
+        border-spacing: 10px;
+        width: 100%;
+        font-size: 17px
+    }
+   
+</style>
+<table class="table">
+    <tr>
+        <th>Mã đơn</th>
+        <th>
+            Tình trạng
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Ngày giao
+        </th>
+        <th>
+            Mã khách hàng
+        </th>
+        <th>Tên khách hàng</th>
+        <th>
+            Nơi nhận
+        </th>
+        <th>
+            Người nhận
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="box-shadow: 0px 2px 2px;">
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDat)
+            </td>
+            <td>
+                @Html.FormatValue(item.NgayGiao, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td> @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTenNguoiNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodienthoai)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit",new { id = item.MaDonHang })" class="btn btn-warning" role="button">Sửa</a>
+                <a href="@Url.Action("Details",new { id = item.MaDonHang })" class="btn btn-primary" role="button">Chi tiết</a>
+
+            </td>
+
+        </tr>
+        
+    }
+
+</table>
+

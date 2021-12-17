@@ -1,0 +1,28 @@
+﻿<style>
+   table{
+       margin-top: -25px;
+   }
+    input{
+        height : 40px;
+    }
+    .inputtext{
+        width: 200px;
+    }
+    .btntk{
+        color: black;
+       
+    }
+   
+</style>
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Get))
+{
+    <table>
+        <tr>
+            <td><input class="inputtext" type="text" name="strSearch" value="@ViewBag.Search" placeholder="Nhập sản phẩm cần tìm...."
+       size="100" /></td>
+            <td><input class="btntk" type="submit" value="Tìm kiếm" /></td>
+        </tr>
+    
+    </table>
+}
